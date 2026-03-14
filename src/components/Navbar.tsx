@@ -35,16 +35,12 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-4 md:px-8">
-        <Link
-          to="/"
-          className={`font-display text-2xl font-bold transition-colors ${
-            scrolled ? "text-primary" : "text-white"
-          }`}
-        >
-          Zoe Pereira{" "}
-          <span className={`font-light ${scrolled ? "text-foreground" : "text-white"}`}>
-            Caterers
-          </span>
+        <Link to="/" className={`font-display text-2xl font-bold transition-colors duration-300 ${
+          scrolled ? "text-primary" : "text-yellow-300 drop-shadow-lg"
+        }`}>
+          Zoe Pereira <span className={`font-light transition-colors duration-300 ${
+            scrolled ? "text-foreground" : "text-white drop-shadow-lg"
+          }`}>Caterers</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -53,10 +49,10 @@ const Navbar = () => {
             <li key={item.path}>
               <Link
                 to={item.path}
-                className={`font-body text-sm font-medium tracking-wide uppercase transition-colors duration-200 hover:text-primary ${
+                className={`font-body text-sm font-medium tracking-wide uppercase transition-colors duration-200 ${
                   location.pathname === item.path
-                    ? "text-primary"
-                    : scrolled ? "text-foreground" : "text-secondary-foreground md:text-card-foreground"
+                    ? scrolled ? "text-primary" : "text-yellow-300 drop-shadow-lg"
+                    : scrolled ? "text-foreground hover:text-primary" : "text-white hover:text-yellow-300 drop-shadow-lg"
                 }`}
               >
                 {item.label}
@@ -67,9 +63,7 @@ const Navbar = () => {
 
         {/* Mobile Toggle */}
         <button
-          className={`md:hidden transition-colors ${
-            scrolled ? "text-foreground" : "text-white"
-          }`}
+          className={`md:hidden transition-colors duration-300 ${scrolled ? "text-foreground" : "text-white drop-shadow-lg"}`}
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
