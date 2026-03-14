@@ -35,8 +35,16 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-4 md:px-8">
-        <Link to="/" className="font-display text-2xl font-bold text-primary">
-          Zoe Pereira <span className="font-light text-foreground">Caterers</span>
+        <Link
+          to="/"
+          className={`font-display text-2xl font-bold transition-colors ${
+            scrolled ? "text-primary" : "text-white"
+          }`}
+        >
+          Zoe Pereira{" "}
+          <span className={`font-light ${scrolled ? "text-foreground" : "text-white"}`}>
+            Caterers
+          </span>
         </Link>
 
         {/* Desktop Nav */}
@@ -59,7 +67,9 @@ const Navbar = () => {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-foreground"
+          className={`md:hidden transition-colors ${
+            scrolled ? "text-foreground" : "text-white"
+          }`}
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
