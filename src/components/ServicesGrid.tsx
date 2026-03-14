@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { UtensilsCrossed, ChefHat, Wine, CalendarDays, Mic2, Music, Lightbulb, Catering } from "lucide-react";
+import { UtensilsCrossed, ChefHat, Wine, CalendarDays, Mic2, Music, Lightbulb } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 interface ServiceCard {
